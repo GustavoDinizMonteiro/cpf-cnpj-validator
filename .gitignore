@@ -10,6 +10,6 @@ yarn.lock
 .vscode
 
 # Generated sources and type definitions
-dist/
-types/
+# dist/
+# types/
 src/*.js

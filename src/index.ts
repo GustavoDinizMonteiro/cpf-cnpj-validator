@@ -4,8 +4,15 @@ import cnpj from './cnpj'
 
 export { cpf, cnpj }
 
-export default Joi.extend({
-  base: Joi.string(),
+const joi = new Proxy(Joi, {
+  get(o, name) {
+    return o[name].bind(o);
+  }
+})
+const { extend, string }  = joi
+
+export default extend({
+  base: string(),
   name: 'document',
   language: {
     cnpj: 'informado é inválido',
