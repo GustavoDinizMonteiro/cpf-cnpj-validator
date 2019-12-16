@@ -4,7 +4,7 @@ import cnpj from './cnpj'
 
 export { cpf, cnpj }
 
-export default {
+export default Joi.extend({
   base: Joi.string(),
   name: 'document',
   language: {
@@ -30,4 +30,4 @@ export default {
       return value
     }
   }]
-}
+})

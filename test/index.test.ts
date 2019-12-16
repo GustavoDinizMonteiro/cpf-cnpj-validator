@@ -4,7 +4,7 @@ import validator, { cpf, cnpj } from '../src'
 
 declare var require: any
 
-const Joi = require('@hapi/joi').extend(validator)
+const Joi = validator
 
 describe('Test CPF', () => {
   const cpfSchema = Joi.document().cpf().required()
